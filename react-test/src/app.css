@@ -1,0 +1,14 @@
+
+.show{
+  width: 300px;
+  overflow: hidden;
+}
+.tabs{
+  width: 300%;
+  display: flex;
+  transition: margin-left 0.75s;
+}
+.tab{
+  flex-grow: 1;
+}
+/*项目的 float  vertical-align  db*/
