@@ -1,0 +1,15 @@
+body{
+  margin: 0;
+}
+header{
+  background-color: #4E342E;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 50px;
+  font-size: 20px;
+  color: white;
+  padding-right: 50px;
+}
+header span{
+  cursor: pointer;
+}

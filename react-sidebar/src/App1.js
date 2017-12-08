@@ -33,7 +33,6 @@ class App1 extends React.Component {
       [stateName]:e.target.value
     })
   }
-
   handleSubmit = e => {
     e.preventDefault()
     const { username, sex, comment, grade} = this.state
@@ -42,7 +41,6 @@ class App1 extends React.Component {
     console.log(`评论:${comment}`)
     console.log(`等级:${grade}`)
   }
-
   render () {
     let obj = {
       name: 'zzt'

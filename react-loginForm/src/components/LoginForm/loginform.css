@@ -1,0 +1,22 @@
+.form-wrap{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.2);
+}
+.form-wrap form{
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top: 100px;
+}
+.username,.password{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
