@@ -3,7 +3,10 @@ import React from 'react'
 class App extends React.Component {
   state = {
     username:'',
-    sex:'yao'
+    sex:'yao',
+    fruit:[],
+    comment:'',
+    grade: 'B'
   }
   // handleClick = () => {
   //   console.log(this.input.value)
@@ -24,10 +27,37 @@ class App extends React.Component {
   }
   handleSubmit = e => {
     e.preventDefault()
-    const { username } = this.state
+    const { username, fruit, sex, comment, grade} = this.state
     console.log(`用户名:${username}`)
+    console.log(`性别:${sex}`)
+    console.log(`水果:${fruit}`)
+    console.log(`评论:${comment}`)
+    console.log(`等级:${grade}`)
   }
-
+  handleCheck = e => {
+    //fruit[]
+    let { fruit } = this.state
+    const value = e.target.value
+    const ind = fruit.indexOf(value)
+    if(ind === -1){
+      fruit.push(value)
+    }else{
+      fruit.splice(ind,1)
+    }
+    this.setState({
+      fruit : fruit
+    })
+  }
+  handleComment = e => {
+    this.setState({
+      comment:e.target.value
+    })
+  }
+  handleSelect = e => {
+    this.setState({
+      grade:e.target.value
+    })
+  }
   render () {
     return(
       <div>
@@ -43,6 +73,20 @@ class App extends React.Component {
         女<input type='radio' name='sex' value='female' checked={this.state.sex === 'female'? true :false } onChange={ this.handleRadio }></input>
 
         人妖<input type='radio' name='sex' value='yao' checked={this.state.sex === 'yao'? true :false } onChange={ this.handleRadio }></input><br/>
+        你喜欢的水果？<br />
+        香蕉<input type='checkbox' value='banana' onChange={ this.handleCheck}></input>
+        苹果<input type='checkbox' value='apple' onChange={ this.handleCheck}></input>
+        大鸭梨<input type='checkbox' value='pear' onChange={ this.handleCheck}></input><br/>
+        评论
+        <textarea value={ this.state.comment } onChange = { this.handleComment }></textarea><br />
+
+        等级
+        <select value={ this.state.grade } onChange={this.handleSelect}>
+          <option value='A'>A</option>
+          <option value='B'>B</option>
+          <option value='C'>C</option>
+          <option value='D'>D</option>
+        </select><br />
         <input type='submit' onClick={this.handleSubmit}></input>
         </form>
       </div>
