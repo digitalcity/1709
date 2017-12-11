@@ -1,0 +1,53 @@
+.show{
+  width: 500px;
+  overflow: hidden;
+  position: relative;
+}
+.pic{
+  width: 1500px;
+  display: flex;
+  transition: margin-left 0.75s;
+}
+.show>ul{
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  width: 110px;
+  bottom:10px;
+  display: flex;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.show>ul li{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.75);
+  margin-left: 10px;
+  cursor: pointer;
+}
+.show>ul li:nth-child(1){
+  margin-left: 0;
+}
+.show>button{
+  position: absolute;
+  outline: 0;
+  border: 0;
+  width: 40px;
+  height: 100px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgba(3,3,3,0.5);
+  cursor: pointer;
+  font-size: 20px;
+}
+.show>.right{
+  right: 0;
+}
+.show ul li.active{
+  background-color: teal;
+}

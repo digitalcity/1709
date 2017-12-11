@@ -1,0 +1,26 @@
+
+.goods-wrap{
+  display: flex;
+  justify-content: space-around;
+}
+.good{
+  display: flex;
+  flex-direction: column;
+}
+.good img{
+  width: 200px;
+}
+.good .btn{
+  outline: 0;
+  border: 0;
+  background-color: hotpink;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  line-height: 40px;
+  font-size: 20px;
+  color: white;
+}
+.good .btn.active{
+  background-color: #ccc;
+}
