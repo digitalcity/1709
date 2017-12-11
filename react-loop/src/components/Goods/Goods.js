@@ -33,6 +33,7 @@ class Goods extends React.Component {
         return item
       })
     })
+    this.props.addCar(this.state.goods.find( item => item.id === id))
   }
   render () {
     const { goods } = this.state

@@ -8,8 +8,13 @@
   line-height: 150px;
   margin: 0 auto;
 }
+button{
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
 .car{
-  width: 380px;
+  width: 420px;
   margin: 0 auto;
   margin-top: -40px;
 }
@@ -17,18 +22,47 @@
   display: flex;
   background-color: #fff;
   border: 1px solid #ccc;
-  justify-content: space-between;
+  /*justify-content: flex-end;*/
   align-items: center;
   padding: 20px;
 }
 .car .car-good img{
   width: 80px;
   height: 60px;
+  margin-right: 10px;
 }
 .good-info{
   display: flex;
   align-items: center;
+  line-height: 30px;
+  flex-grow: 1;
 }
 .good-info h3{
   margin: 0;
+  color: #dba269;
+}
+.count{
+  display: flex;
+  margin-right: 10px;
+}
+.car-good .count button{
+  font-size: 24px;
+  background-color: #fff;
+}
+.car-good .count span{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  background-color: hotpink;
+  margin: 0 5px;
+}
+.car-good >button{
+  background-color: #ccc;
+  width: 60px;
+  color: white;
+  line-height: 30px;
+  border-radius: 4px;
 }

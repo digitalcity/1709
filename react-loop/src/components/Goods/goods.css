@@ -1,6 +1,7 @@
 
 .goods-wrap{
   display: flex;
+  margin-bottom: 30px;
   justify-content: space-around;
 }
 .good{
