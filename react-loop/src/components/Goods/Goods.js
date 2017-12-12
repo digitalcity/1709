@@ -26,6 +26,14 @@ class Goods extends React.Component {
       }
     ]
   }
+  handleDelete = id => {
+    this.setState({
+      goods:this.state.goods.map( item => {
+        if(item.id===id)item.buy=false
+        return item
+      } )
+    })
+  }
   handleClick = id =>{
     this.setState({
       goods : this.state.goods.map(item=>{
