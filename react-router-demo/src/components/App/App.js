@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Route, NavLink, Redirect, Switch } from 'react
 import Home from '../Home/Home'
 import About from '../About/About'
 import Work from '../Work/Work'
+import Help from '../Help/Help'
 import './app.css'
 const Error = () => <div>404</div>
 class App extends React.Component {
   render () {
+    let a = 10
     const style ={
       fontWeight:'bold',
       color:'red'
@@ -14,9 +16,13 @@ class App extends React.Component {
     return (
       <Router>
         <div>
+          <Help />
           <ul>
             <li><NavLink to='/' exact activeStyle={style} >Home</NavLink></li>
-            <li><NavLink to='/about' activeStyle={style}>About</NavLink></li>
+            <li><NavLink to={{
+                pathname: '/about',
+                state: { a: a }
+              }} activeStyle={style}>About</NavLink></li>
             <li><NavLink to='/newwork' activeStyle={style}>Work</NavLink></li>
           </ul>
           <Switch>
