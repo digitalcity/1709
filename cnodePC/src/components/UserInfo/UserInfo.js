@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import './userinfo.css'
 class UserInfo extends React.Component {
   state = {
     userinfo:null
@@ -20,14 +21,14 @@ class UserInfo extends React.Component {
     const { userinfo } = this.state
     console.log(userinfo)
     const intro = userinfo ? (
-      <div>
+      <div className='userinfo'>
         <img src={userinfo.avatar_url} alt=""/>
         <span>{userinfo.loginname}</span>
         <h4>最近参与的话题</h4>
         {
           userinfo.recent_replies.map( item => {
             return (
-              <div key={item.id}>
+              <div className='recent_replies' key={item.id}>
                 <img src={item.author.avatar_url} alt=""/>
                 <p>{item.title}</p>
               </div>
@@ -38,7 +39,7 @@ class UserInfo extends React.Component {
           {
             userinfo.recent_topics.map( item => {
               return (
-                <div key={item.id}>
+                <div className='recent_topics' key={item.id}>
                   <img src={item.author.avatar_url} alt=""/>
                   <p>{item.title}</p>
                 </div>
