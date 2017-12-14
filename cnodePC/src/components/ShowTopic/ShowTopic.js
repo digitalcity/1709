@@ -21,9 +21,9 @@ class ShowTopic extends React.Component {
     const { data } = this.state
     console.log(data)
     const article = data ? (
-      <div>
-        <h2>{data.title}</h2>
-        <p> 作者:{data.author.loginname}
+      <div className='article'>
+        <h2 className='article-title'>{data.title}</h2>
+        <p className='article-info'> 作者:{data.author.loginname}
           <span> 浏览量:{data.visit_count} </span>
           <span> 发布于{data.create_at} </span>
         </p>
@@ -31,13 +31,13 @@ class ShowTopic extends React.Component {
           <div dangerouslySetInnerHTML={ {__html: data.content} } />
         </div>
         <h2>全部回复</h2>
-        <div className="reply">
+        <div className="replies">
           {
             data.replies.map( item => {
               return (
-                <div key={item.id}>
+                <div key={item.id} className='reply'>
                   <img src={item.author.avatar_url} alt="11"/>
-                  <span>{item.author.loginname}</span>
+                  <span className='reply-author'>{item.author.loginname}</span>
                   <div dangerouslySetInnerHTML={ {__html: item.content} } />
                 </div>
               )
