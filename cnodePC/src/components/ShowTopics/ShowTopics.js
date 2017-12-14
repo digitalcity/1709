@@ -1,19 +1,20 @@
 import React from 'react'
-
+import './showtopics.css'
+import { Link } from 'react-router-dom'
 class ShowTopics extends React.Component {
   render () {
     const { data } = this.props
     console.log(data)
-    const showTopics = data.map( item => {
+    const showTopics = data.length !== 0 ? data.map( item => {
       return (
-        <div key={item.id}>
+        <div key={item.id} className='showtopic'>
           <img src={item.author.avatar_url} alt="11"/>
-          <span>{item.reply_count}/{item.visit_count}</span>
-          <span>{item.top?'置顶':item.good?'精华':item.tab==='share'?'分享':'问答'}</span>
-          <span>{item.title}</span>
+          <span className='topic-info'>{item.reply_count}/{item.visit_count}</span>
+          <span className={`topic-tab ${(item.top || item.good)&&'active'}`}>{item.top?'置顶':item.good?'精华':item.tab==='share'?'分享':'问答'}</span>
+          <span className='topic-title'><Link to={`/topic/${item.id}`}>{item.title}</Link></span>
         </div>
       )
-    })
+    }) : <img src="http://img.lanrentuku.com/img/allimg/1212/5-121204193Q9.gif" alt="111" />
     return (
       <div>{showTopics}</div>
     )

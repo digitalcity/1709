@@ -1,0 +1,29 @@
+.showtopic{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.showtopic>img{
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.showtopic>.topic-info{
+  width: 85px;
+  text-align: center;
+  margin-right: 5px;
+}
+.showtopic .topic-tab{
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 12px;
+  background-color: #e5e5e5;
+  color: #999;
+  margin-right: 10px;
+}
+.showtopic .topic-tab.active{
+  background-color: #80bd01;
+  color: white;
+}
