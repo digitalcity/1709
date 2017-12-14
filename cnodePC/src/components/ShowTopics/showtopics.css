@@ -42,3 +42,6 @@
 .showtopic .topic-title a:visited{
   color: #888;
 }
+.showtopic .topic-title a:hover{
+  text-decoration: underline;
+}
