@@ -26,6 +26,7 @@
   margin-right: 10px;
   flex-shrink:  0;
 }
+
 .showtopic .topic-tab.active{
   background-color: #80bd01;
   color: white;

@@ -1,4 +1,5 @@
 import React from 'react'
+import './home.css'
 import ShowTopics from '../ShowTopics/ShowTopics'
 import axios from 'axios'
 class Home extends React.Component {

@@ -1,12 +1,12 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import './userinfo.css'
 class UserInfo extends React.Component {
   state = {
     userinfo:null
   }
-  componentDidMount() {
-    const { loginname } = this.props.match.params
+  getUserInfo = (loginname) => {
     axios.get(`https://cnodejs.org/api/v1/user/${loginname}`)
       .then( res => {
         this.setState({
@@ -17,9 +17,16 @@ class UserInfo extends React.Component {
         alert(err)
       })
   }
+  componentDidMount() {
+    const { loginname } = this.props.match.params
+    this.getUserInfo(loginname)
+  }
+  componentWillReceiveProps(nextProps) {
+    const { loginname } = nextProps.match.params
+    this.getUserInfo(loginname)
+  }
   render () {
     const { userinfo } = this.state
-    console.log(userinfo)
     const intro = userinfo ? (
       <div className='userinfo'>
         <img src={userinfo.avatar_url} alt=""/>
@@ -29,8 +36,8 @@ class UserInfo extends React.Component {
           userinfo.recent_replies.map( item => {
             return (
               <div className='recent_replies' key={item.id}>
-                <img src={item.author.avatar_url} alt=""/>
-                <p>{item.title}</p>
+                <Link to={`/user/${item.author.loginname}`}><img src={item.author.avatar_url} alt="111"/></Link>
+                <p><Link to={`/topic/${item.id}`}>{item.title}</Link></p>
               </div>
             )
           })
@@ -40,8 +47,8 @@ class UserInfo extends React.Component {
             userinfo.recent_topics.map( item => {
               return (
                 <div className='recent_topics' key={item.id}>
-                  <img src={item.author.avatar_url} alt=""/>
-                  <p>{item.title}</p>
+                  <img src={item.author.avatar_url} alt="11"/>
+                  <p><Link to={`/topic/${item.id}`}>{item.title}</Link></p>
                 </div>
               )
             })
