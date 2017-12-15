@@ -20,7 +20,6 @@ class ShowTopic extends React.Component {
   }
   render () {
     const { data } = this.state
-    console.log(data)
     const article = data ? (
       <div className='article'>
         <h2 className='article-title'>{data.title}</h2>

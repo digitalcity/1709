@@ -8,6 +8,20 @@ class Header extends React.Component {
     token:'',
     userInfo:null
   }
+  componentDidMount() {
+    if(sessionStorage.token === '9948d556-1825-416f-934f-b3ce046403e3' ) {
+      axios.post('https://cnodejs.org/api/v1/accesstoken',{accesstoken:sessionStorage.token})
+      .then(res=>{
+        this.setState({
+          login: true,
+          userInfo: res.data
+        })
+      })
+      .catch(err=>{
+        alert(err)
+      })
+    }
+  }
   handleChange = e => {
     console.log(this.state.token)
     this.setState({
@@ -18,7 +32,8 @@ class Header extends React.Component {
     const { token } = this.state
     axios.post('https://cnodejs.org/api/v1/accesstoken',{accesstoken:token})
     .then(res=>{
-      console.log(res)
+      sessionStorage.token = token
+      // localStorage.token = token
       this.setState({
         login: true,
         userInfo: res.data
@@ -29,6 +44,7 @@ class Header extends React.Component {
     })
   }
   handleLogout = () => {
+    sessionStorage.clear('token')
     this.setState({
       login: false,
       userInfo: null,
@@ -37,7 +53,6 @@ class Header extends React.Component {
   }
   render () {
     const { token, login, userInfo } = this.state
-
     return (
       <header>
         <Link to='/'>
