@@ -60,6 +60,7 @@ class Header extends React.Component {
         </Link>
         {
           login ? (<div className='logout'>
+            <Link to='/topic/create'>发布文章</Link>
             <img className='author-pic' src={userInfo.avatar_url} alt="111"/>
             <button onClick={this.handleLogout}>退出</button>
           </div>) : (<div className='login'>
