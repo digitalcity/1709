@@ -44,7 +44,7 @@ class UserInfo extends React.Component {
         }
         <h4>最近创建的话题</h4>
           {
-            userinfo.recent_topics.map( item => {
+            (userinfo.recent_topics.length > 5 ? userinfo.recent_topics.slice(0,5) : userinfo.recent_topics).map( item => {
               return (
                 <div className='recent_topics' key={item.id}>
                   <img src={item.author.avatar_url} alt="11"/>

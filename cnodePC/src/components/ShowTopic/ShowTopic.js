@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import './showtopic.css'
+import { Link } from 'react-router-dom'
 class ShowTopic extends React.Component {
   state = {
     data:null
@@ -36,7 +37,9 @@ class ShowTopic extends React.Component {
             data.replies.map( item => {
               return (
                 <div key={item.id} className='reply'>
-                  <img src={item.author.avatar_url} alt="11"/>
+                  <Link to={`/user/${item.author.loginname}`}>
+                    <img src={item.author.avatar_url} alt="11"/>
+                  </Link>
                   <span className='reply-author'>{item.author.loginname}</span>
                   <div dangerouslySetInnerHTML={ {__html: item.content} } />
                 </div>

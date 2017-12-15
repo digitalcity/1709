@@ -9,16 +9,23 @@ from 'react-router-dom'
 import Home from '../Home/Home'
 import ShowTopic from '../ShowTopic/ShowTopic'
 import UserInfo from '../UserInfo/UserInfo'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 class App extends React.Component {
   render () {
     return (
-      <Router>
-        <div>
-          <Route path='/' exact component={Home}/>
-          <Route path='/topic/:id'  component={ShowTopic}/>
-          <Route path='/user/:loginname' component={UserInfo} />
-        </div>
-      </Router>
+      <div>
+        <Router>
+          <div>
+            <Header />
+            <Route path='/' exact component={Home}/>
+            <Route path='/topic/:id'  component={ShowTopic}/>
+            <Route path='/user/:loginname' component={UserInfo} />
+            <Footer />
+          </div>
+        </Router>
+
+      </div>
     )
   }
 }

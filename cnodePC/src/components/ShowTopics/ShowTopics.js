@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 class ShowTopics extends React.Component {
   render () {
     const { data } = this.props
-    console.log(data)
     const showTopics = data.length !== 0 ? data.map( item => {
       return (
         <div key={item.id} className='showtopic'>

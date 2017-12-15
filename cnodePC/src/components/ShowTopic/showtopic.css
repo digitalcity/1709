@@ -36,16 +36,17 @@
 .topic-content ul{
   list-style-position: inside;
   padding-left:0;
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 .reply{
   display: flex;
   padding: 10px;
   border-top: 1px solid #f0f0f0;
 }
-.reply>img{
+.reply>a>img{
   width: 30px;
   height: 30px;
+  flex-shrink: 0;
   border-radius: 3px;
   margin-right: 10px;
 }
