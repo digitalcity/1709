@@ -1,6 +1,6 @@
 import React from 'react'
 import './header.css'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import axios from 'axios'
 class Header extends React.Component {
   state = {
@@ -50,6 +50,7 @@ class Header extends React.Component {
       userInfo: null,
       token:''
     })
+    this.props.history.push('/')
   }
   render () {
     const { token, login, userInfo } = this.state
@@ -61,7 +62,7 @@ class Header extends React.Component {
         {
           login ? (<div className='logout'>
             <Link to='/topic/create'>发布文章</Link>
-            <img className='author-pic' src={userInfo.avatar_url} alt="111"/>
+            <Link to={`/user/${userInfo.loginname}`}><img className='author-pic' src={userInfo.avatar_url} alt="111"/></Link>
             <button onClick={this.handleLogout}>退出</button>
           </div>) : (<div className='login'>
             <input  type="text" value={token} onChange={this.handleChange}/>
@@ -73,4 +74,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+export default withRouter(Header)
