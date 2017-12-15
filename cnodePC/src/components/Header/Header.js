@@ -1,4 +1,5 @@
 import React from 'react'
+import './header.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 class Header extends React.Component {
@@ -40,14 +41,14 @@ class Header extends React.Component {
     return (
       <header>
         <Link to='/'>
-          <img style={{width:'200px'}} src='https://o4j806krb.qnssl.com/public/images/cnodejs_light.svg' alt="111" />
+          <img style={{width:'140px'}} src='https://o4j806krb.qnssl.com/public/images/cnodejs_light.svg' alt="111" />
         </Link>
         {
-          login ? (<div>
-            <img src={userInfo.avatar_url} alt="111"/>
+          login ? (<div className='logout'>
+            <img className='author-pic' src={userInfo.avatar_url} alt="111"/>
             <button onClick={this.handleLogout}>退出</button>
-          </div>) : (<div>
-            <input type="text" value={token} onChange={this.handleChange}/>
+          </div>) : (<div className='login'>
+            <input  type="text" value={token} onChange={this.handleChange}/>
             <button onClick={this.handleLogin}>登录</button>
           </div>)
         }
