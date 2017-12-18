@@ -3,15 +3,13 @@ import React from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import RaisedButton from 'material-ui/RaisedButton'
-import AppBar from 'material-ui/AppBar';
-import FontIcon from 'material-ui/FontIcon';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar'
+import FontIcon from 'material-ui/FontIcon'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import 'typeface-roboto'
 class App extends React.Component {
   render () {
-    
-    console.log(darkBaseTheme)
     return (
       <div>
         {
@@ -25,7 +23,8 @@ class App extends React.Component {
             <AppBar
               title="Title"
               iconElementRight={<FontIcon className="material-icons" color='red'>home</FontIcon>}
-
+              onTitleClick={()=>alert(2)}
+              onLeftIconButtonClick={()=>alert(1)}
             />
           <FontIcon className="material-icons" >home</FontIcon>
           </div>

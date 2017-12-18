@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.0.1",
     "axios": "^0.17.1",
     "bootstrap": "^3.3.7",
     "material-ui": "^0.20.0",
+    "moment": "^2.20.0",
     "react": "^16.1.1",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.1.1",
@@ -18,5 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "amazeui-touch": "^2.0.0-alpha.1",
+    "babel-plugin-import": "^1.6.3"
   }
 }
