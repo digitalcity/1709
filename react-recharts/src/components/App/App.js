@@ -2,6 +2,16 @@ import React from 'react'
 import './app.css'
 import {PieChart, Pie, Legend, Tooltip, Cell, LabelList} from 'recharts'
 class App extends React.Component {
+  constructor(){
+    super()
+    this.state={
+      items:[]
+    }
+    this.handle= this.handle.bind(this)
+  }
+  handle(){
+    console.log(1)
+  }
   render () {
     const data01 = [
       {name: 'React', value: 500},
@@ -13,7 +23,7 @@ class App extends React.Component {
     return (
       <div>
         <PieChart width={400} height={300} style={{margin: '0 auto',border:'2px solid #ccc'}}>
-          <Pie dataKey="value"  data={data01} cx={200} cy={150}  outerRadius={80} fill="#8884d8" label>
+          <Pie dataKey="value"  data={data01} cx={200} cy={150}  outerRadius={80} fill="#8884d8" label >
             {data01.map((item,index) => <Cell key={index} fill={COLORS[index]} />)}
           </Pie>
           <Tooltip/>
